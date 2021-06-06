@@ -142,7 +142,21 @@ except Exception as e:
 #    - Inside the function, you should first check with `assert` -functionality that the input is a Shapely Polygon geometry (see [lesson 6](https://geo-python.github.io/site/lessons/L6/interpreting-errors.html#assertions) and [hints](https://automating-gis-processes.github.io/site/develop/lessons/L1/exercise-1.html#hints)). If something else than a list is passed for the function, you should return an Error message: `"Input should be a Shapely Polygon -object!"`
 
 # YOUR CODE HERE 8 to define get_area()
+except AssertionError:
+    print("Found and assertion error. Geometry -check works correctly.")
+except Exception as e:
+    raise e
 
+
+# 2: Create a function called `get_area()` with one parameter called `polygon`. Function should take a Shapely's Polygon -object as input and returns the area of that geometry. 
+#    
+#    - Inside the function, you should first check with `assert` -functionality that the input is a Shapely Polygon geometry (see [lesson 6](https://geo-python.github.io/site/lessons/L6/interpreting-errors.html#assertions) and [hints](https://automating-gis-processes.github.io/site/develop/lessons/L1/exercise-1.html#hints)). If something else than a list is passed for the function, you should return an Error message: `"Input should be a Shapely Polygon -object!"`
+
+# YOUR CODE HERE 8 to define get_area()
+def get_area(polygon):
+    assert type(polygon) == Polygon, "Input should be a Shapely Polygon-object!"
+    area = polygon.area
+    return area
 # Test and demonstrate the usage of the function:
 get_area(poly1)
 
